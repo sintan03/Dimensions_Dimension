@@ -63,7 +63,7 @@ function update() {
   const diff = (now - lastTick) / 1000;
   lastTick = now;
 
-  antimatter += dimension * 0.1 * diff;
+  antimatter += dimension * 0.05 * diff;
 
   document.getElementById("antimatter").innerText = antimatter.toFixed(1);
   document.getElementById("dim1-cost").innerText = cost.toFixed(1);
