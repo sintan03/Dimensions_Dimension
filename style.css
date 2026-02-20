@@ -64,6 +64,16 @@ button:active {
   border: 1px solid #333;
 }
 
+.can-buy {
+  border-color: #00ffcc;
+  box-shadow: 0 0 8px #00ffcc;
+}
+
+.cannot-buy {
+  opacity: 0.4;
+  border-color: #444;
+}
+
 .dimension-row {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
