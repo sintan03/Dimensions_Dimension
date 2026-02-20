@@ -29,7 +29,9 @@ function buyDimension() {
 }
 
 function update() {
-  antimatter += dimension * 0.1;
+  antimatter += dimension * 0.01;
+
+  document.getElementById("persec").innerText = dimension.toFicxed(1);
 
   document.getElementById("antimatter").innerText = antimatter.toFixed(1);
   document.getElementById("dim1-cost").innerText = cost.toFixed(1);
@@ -37,4 +39,4 @@ function update() {
   updateButtons();  // ← これを追加
 }
 
-setInterval(update, 100); // 0.1秒ごと更新
+setInterval(update, 10); // 0.1秒ごと更新
