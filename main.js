@@ -28,16 +28,53 @@ function buyDimension() {
   }
 }
 
-function update() {
-  antimatter += dimension * 0.05;
+function save() {
+  const saveData = {
+    antimatter: antimatter,
+    dimension: dimension,
+    cost: cost,
+    lastUpdate: Date.now()
+  };
 
-  document.getElementById("persec").innerText = dimension.toFixed(1);
+  localStorage.setItem("save", JSON.stringify(saveData));
+}
+
+function load() {
+  const saveData = JSON.parse(localStorage.getItem("save"));
+
+  if (saveData) {
+    antimatter = saveData.antimatter;
+    dimension = saveData.dimension;
+    cost = saveData.cost;
+
+    const offlineTime = (Date.now() - saveData.lastUpdate) / 1000;
+
+    const offlineGain = dimension * 0.1 * offlineTime;
+    antimatter += offlineGain;
+
+    alert("オフライン中に +" + offlineGain.toFixed(1) + " 獲得しました！");
+  }
+}
+
+let lastTick = Date.now();
+
+function update() {
+  const now = Date.now();
+  const diff = (now - lastTick) / 1000;
+  lastTick = now;
+
+  antimatter += dimension * 0.1 * diff;
 
   document.getElementById("antimatter").innerText = antimatter.toFixed(1);
-  document.getElementById("dim1-amount").innerText = dimension.toFixed(1);
   document.getElementById("dim1-cost").innerText = cost.toFixed(1);
+
+  document.getElementById("persec").innerText = dimension.toFixed(1);
+  document.getElementById("antimatter").innerText = antimatter.toFixed(1);
 
   updateButtons();  // ← これを追加
 }
 
 setInterval(update, 50); // 0.1秒ごと更新
+setInterval(save, 5000); // 5秒ごとに保存
+
+load();
