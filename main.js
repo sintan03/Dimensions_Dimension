@@ -1,5 +1,5 @@
 let antimatter = 10;
-let dimension = 1;
+let dimension = 0;
 let cost = 10;
 
 function buyDimension() {
