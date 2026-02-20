@@ -42,3 +42,12 @@ body {
   width: 600px;
   border: 1px solid #333;
 }
+
+.dimension-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.big-number {
+  font-family: "Courier New", monospace;
+}
