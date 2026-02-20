@@ -8,6 +8,18 @@ function openTab(name) {
   document.getElementById(name).style.display = "block";
 }
 
+function updateButtons() {
+  const btn = document.getElementById("dim1-btn");
+
+  if (antimatter >= cost) {
+    btn.classList.add("can-buy");
+    btn.classList.remove("cannot-buy");
+  } else {
+    btn.classList.add("cannot-buy");
+    btn.classList.remove("can-buy");
+  }
+}
+
 function buyDimension() {
   if (antimatter >= cost) {
     antimatter -= cost;
