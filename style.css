@@ -32,6 +32,27 @@ body {
   background: #333;
 }
 
+button {
+  background: #1a1a1a;
+  color: white;
+  border: 2px solid #444;
+  padding: 8px 16px;
+  font-family: "Courier New", monospace;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* ホバー */
+button:hover {
+  background: #222;
+  border-color: #888;
+}
+
+/* 押したとき */
+button:active {
+  transform: scale(0.95);
+}
+
 .dimension-row {
   display: flex;
   justify-content: space-between;
