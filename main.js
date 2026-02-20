@@ -74,6 +74,14 @@ function giveMoney() {
   antimatter = antimatter.add("1e10");
 }
 
+function format(value) {
+  if (value.lt(1e3)) {
+    return value.toFixed(1);
+  } else {
+    return value.toExponential(2).replace("+", "");
+  }
+}
+
 let lastTick = Date.now();
 
 function update() {
@@ -83,11 +91,10 @@ function update() {
 
   antimatter = antimatter.add(dimension.mul(diff));
 
-  document.getElementById("antimatter").innerText = antimatter.toFixed(1);
-  document.getElementById("dim1-cost").innerText = cost.toFixed(1);
-
-  document.getElementById("persec").innerText = dimension.toFixed(1);
-  document.getElementById("dim1-amount").innerText = dimension.toFixed(1);
+  document.getElementById("antimatter").innerText = format(antimatter);
+  document.getElementById("dim1-cost").innerText = format(cost);
+  document.getElementById("persec").innerText = format(dimension);
+  document.getElementById("dim1-amount").innerText = format(dimension);
 
   updateButtons();  // ← これを追加
 }
