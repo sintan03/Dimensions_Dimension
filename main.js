@@ -6,7 +6,7 @@ function buyDimension() {
   if (antimatter >= cost) {
     antimatter -= cost;
     dimension++;
-    cost *= 1.15;
+    cost *= 1.01;
   }
 }
 
