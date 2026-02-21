@@ -9,12 +9,6 @@
 
 <body>
 
-  <button onclick="hardReset()" style="margin-top:20px; background:#400;">
-    HARD RESET
-  </button>
-
-  <button onclick="giveMoney()">+1e10</button>
-
   <div class="top-bar">
     <h1>Dimension Shard</h1>
     <div id="antimatter" class="big-number">10</div>
@@ -37,7 +31,7 @@
         x<span id="dim1-multi">1.0</span>
       </div>
       <button id="dim1-btn" onclick="buyDimension(1)">
-        Buy (Cost: <span id="dim1-cost">10</span>)
+        Cost: <span id="dim1-cost">10</span>
       </button>
     </div>
 
@@ -48,7 +42,7 @@
         x<span id="dim2-multi">1.0</span>
       </div>
       <button id="dim2-btn" onclick="buyDimension(2)">
-        Buy (Cost: <span id="dim2-cost">100</span>)
+        Cost: <span id="dim2-cost">100</span>
       </button>
     </div>
 
@@ -59,7 +53,7 @@
         x<span id="dim3-multi">1.0</span>
       </div>
       <button id="dim3-btn" onclick="buyDimension(3)">
-        Buy (Cost: <span id="dim3-cost">1e4</span>)
+        Cost: <span id="dim3-cost">1e4</span>
       </button>
     </div>
 
@@ -70,7 +64,7 @@
         x<span id="dim4-multi">1.0</span>
       </div>
       <button id="dim4-btn" onclick="buyDimension(4)">
-        Buy (Cost: <span id="dim4-cost">1e6</span>)
+        Cost: <span id="dim4-cost">1e6</span>
       </button>
     </div>
   </div>
@@ -78,6 +72,13 @@
   <div id="upgrades" class="tab-content" style="display:none;">
     <p>Upgrades coming soon...</p>
   </div>
+
+  
+  <button onclick="hardReset()" class="dev-reset">
+    HARD RESET
+  </button>
+
+  <button onclick="giveMoney()" class="dev-add">+1e10</button>
 
   <script src="https://cdn.jsdelivr.net/npm/break_infinity.js@2/dist/break_infinity.min.js"></script>
   <script src="main.js?=v1.0.0.10"></script>

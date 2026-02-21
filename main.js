@@ -92,7 +92,7 @@ function load() {
       for (let j = 3; j > 0; j--) {
         dimensionsMulti[j-1] = dimensionsMulti[j-1].add(dimensions[j].mul(dt).mul(0.1).mul(dimensionsMulti[j]));
       }
-      offlineGain = offlineGain.add(dimensions[0]).mul(dt);
+      offlineGain = offlineGain.add(dimensions[0].mul(dt).mul(dimensionsMulti[0]));
       antimatter = antimatter.add(dimensions[0].mul(dt).mul(dimensionsMulti[0]));
     }
 

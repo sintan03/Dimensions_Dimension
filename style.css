@@ -3,6 +3,7 @@ body {
   color: white;
   font-family: Arial, sans-serif;
   text-align: center;
+  font-size: 14px;
 }
 
 .top-bar {
@@ -18,15 +19,18 @@ body {
 
 .tabs {
   margin: 20px 0;
+  font-size: 14px;
 }
 
 .tabs button {
   background: #222;
   color: white;
   border: 1px solid #444;
-  padding: 10px 20px;
+  padding: 5px 10px;
   margin: 5px;
   cursor: pointer;
+  width: 150px;
+  font-size: 14px;
 }
 
 .tabs button:hover {
@@ -37,21 +41,18 @@ button {
   background: #1a1a1a;
   color: white;
   border: 2px solid #444;
-  padding: 8px 16px;
+  padding: 6px 8px;
   font-family: "Courier New", monospace;
   cursor: pointer;
   transition: all 0.2s ease;
 
   border-radius: 6px;
   /* ← ここ重要 */
-  width: 240px;
+  width: 200px;
   /* ← ここ重要 */
   white-space: nowrap;
-}
 
-button:hover {
-  background: #222;
-  border-color: #888;
+  font-size: 14px;
 }
 
 button:active {
@@ -60,23 +61,22 @@ button:active {
 
 .dimension-row {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1.8fr;
   background: #1b1b1b;
-  margin: 10px auto;
-  padding: 10px;
-  width: 1000px;
+  margin: 8px auto;
+  padding: 4px;
+  width: 600px;
   border: 1px solid #333;
-  
-  height: 40px;
-  line-height: 40px;
+
+  align-items: center;
   text-align: center;
 }
 
 .can-buy {
-  border-color: #00ffcc;
-  animation: glow 1.5s infinite alternate;
+  background: #060;
 }
 
+ /*
 @keyframes glow {
   from {
     box-shadow: 0 0 5px #00ffcc;
@@ -86,8 +86,39 @@ button:active {
     box-shadow: 0 0 20px #00ffcc;
   }
 }
+*/
 
 .cannot-buy {
   opacity: 0.4;
   border-color: #444;
+}
+
+.can-buy:hover {
+  background: #0a0;
+}
+
+.cannot-buy:hover {
+  background: #333;
+}
+
+.dev-reset {
+  background: #400;
+  color: white;
+  border: 2px solid #444;
+  padding: 5px 10px;
+  margin: 5px;
+  cursor: pointer;
+  width: 150px;
+  font-size: 14px;
+}
+
+.dev-add {
+  background: #222;
+  color: white;
+  border: 2px solid #444;
+  padding: 5px 10px;
+  margin: 5px;
+  cursor: pointer;
+  width: 150px;
+  font-size: 14px;
 }
